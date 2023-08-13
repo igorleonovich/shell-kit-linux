@@ -42,7 +42,7 @@ perms() {
   for file in "`find . -type f`"; do stat -c '%A %a %n' $file; done
 }
 permissions-ssh() {
-  $SCRIPTS_PATH/common/permissions-ssh-mac.sh
+  sudo $SCRIPTS_PATH/common/permissions-ssh-linux.sh
 }
 permissions-scripts() {
   $SCRIPTS_PATH/common/permissions-scripts.sh
