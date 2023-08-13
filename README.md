@@ -1,4 +1,4 @@
-# Shell kit for Linux
+# Shell Kit (Linux)
 
 ### Usage:
 
