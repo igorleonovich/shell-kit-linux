@@ -54,6 +54,11 @@ permissions-scripts() {
   $SCRIPTS_PATH/common/permissions-scripts.sh
 }
 
+# MISCELLANEOUS: COMMON: GIT
+gs() {
+  git pull --recurse-submodules && git submodule update --recursive
+}
+
 # MISCELLANEOUS: COMMON: DOCKER
 docker-stop-containers() {
   docker stop $(docker ps -a -q)
