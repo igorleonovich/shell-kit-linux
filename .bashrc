@@ -23,6 +23,7 @@ alias cl="cdlsa"
 alias update="sudo apt update && sudo apt upgrade"
 
 # MISCELLANEOUS: COMMON: NETWORKING
+alias flushdns="sudo resolvectl flush-caches"
 ip-local() {
   hostname -I | awk '{print $1}'
 }
@@ -36,8 +37,14 @@ alias ssh-new="eval `ssh-agent -s`"
 ssh-ed25519() {
   ssh-keygen -o -a 100 -t ed25519 -f $1 -C $2
 }
+ssh-rsa4096() {
+  ssh-keygen -b 4096 -o -a 100 -t rsa -f $1 -C $2
+}
 ssh-public() {
   ssh-keygen -y -f $1 > "$1.pub"
+}
+ssh-add-github() {
+  ssh-keyscan github.com >> ~/.ssh/known_hosts
 }
 
 # MISCELLANEOUS: COMMON: PERMISSIONS
@@ -77,3 +84,17 @@ docker-nginx-logs-colorful() {
   '
 }
 alias dnl="docker-nginx-logs-colorful"
+
+# MISCELLANEOUS: COMMON: ENCRYPTION
+alias e-d="$SCRIPTS_PATH/common/encrypt-decrypt.sh"
+
+#
+# B O O T S T R A P
+#
+
+c
+
+
+#
+# I N B O X
+#
